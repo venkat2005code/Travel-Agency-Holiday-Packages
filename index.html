@@ -95,16 +95,16 @@
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans antialiased flex flex-col min-h-screen transition-colors duration-300">
 <!-- Navbar (Absolute positioning over the cinematic hero) -->
-<header class="absolute top-0 left-0 w-full z-50 bg-transparent border-b border-white/10">
+<header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-black/40 backdrop-blur-md border-b border-white/10 transition-all duration-300">
 <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
-<a class="text-3xl font-serif font-bold text-white flex items-center gap-2 hover:opacity-80 transition-opacity" href="index.html">
-<svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+<a class="text-3xl font-serif font-medium text-white flex items-center gap-2 hover:opacity-80 transition-opacity" href="index.html">
+<img src="images/logo.png" alt="Trek Logo" class="w-8 h-8 object-contain shrink-0">
 <span>Trek<span class="text-accent">.</span></span>
 </a>
 <nav class="hidden lg:flex items-center gap-4 xl:gap-6">
 <!-- Home Dropdown -->
 <div class="relative group">
-<button class="text-sm font-bold text-white/90 border-b-2 border-accent pb-1 transition-colors flex items-center gap-1">
+<button class="text-sm font-medium text-white/90 border-b-2 border-accent pb-1 transition-colors flex items-center gap-1">
                         Home <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </button>
 <div class="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-xl shadow-xl opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all before:absolute before:-top-4 before:left-0 before:w-full before:h-4 border border-gray-100 dark:border-gray-700 flex flex-col z-50">
@@ -112,14 +112,14 @@
 <a class="px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 border-gray-100 dark:border-gray-700 text-sm font-medium border-t first:rounded-t-xl last:rounded-b-xl" href="home2.html">Home 2 (Editorial)</a>
 </div>
 </div>
-<a class="text-sm font-bold text-white/70 hover:text-white transition-colors whitespace-nowrap" href="destinations.html">Destinations</a>
-<a class="text-sm font-bold text-white/70 hover:text-white transition-colors whitespace-nowrap" href="packages.html">Packages</a>
-<a class="text-sm font-bold text-white/70 hover:text-white transition-colors whitespace-nowrap" href="about.html">About</a>
-<a class="text-sm font-bold text-white/70 hover:text-white transition-colors whitespace-nowrap" href="contact.html">Contact</a>
-<a class="text-sm font-bold text-white/70 hover:text-white transition-colors whitespace-nowrap" href="bookings.html">Bookings</a>
+<a class="text-sm font-medium text-white/70 hover:text-white transition-colors whitespace-nowrap" href="destinations.html">Destinations</a>
+<a class="text-sm font-medium text-white/70 hover:text-white transition-colors whitespace-nowrap" href="packages.html">Packages</a>
+<a class="text-sm font-medium text-white/70 hover:text-white transition-colors whitespace-nowrap" href="about.html">About</a>
+<a class="text-sm font-medium text-white/70 hover:text-white transition-colors whitespace-nowrap" href="contact.html">Contact</a>
+<a class="text-sm font-medium text-white/70 hover:text-white transition-colors whitespace-nowrap" href="bookings.html">Bookings</a>
 <!-- Dashboards Dropdown -->
 <div class="relative group">
-<button class="text-sm font-bold text-white/70 hover:text-white transition-colors flex items-center gap-1 whitespace-nowrap">
+<button class="text-sm font-medium text-white/70 hover:text-white transition-colors flex items-center gap-1 whitespace-nowrap">
                         Dashboards <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </button>
 <div class="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-xl shadow-xl opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all before:absolute before:-top-4 before:left-0 before:w-full before:h-4 border border-gray-100 dark:border-gray-700 flex flex-col z-50">
@@ -132,13 +132,13 @@
 <button id="theme-toggle" class="w-10 h-10 flex items-center justify-center rounded-xl border border-white/30 text-white/70 hover:text-white hover:border-white hover:bg-white/10 transition-all flex-shrink-0">
 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </button>
-<button id="dir-toggle" class="w-10 h-10 flex items-center justify-center rounded-xl border border-white/30 text-white/70 text-xs font-bold uppercase hover:text-white hover:border-white hover:bg-white/10 transition-all flex-shrink-0">LTR</button>
+<button id="dir-toggle" class="w-10 h-10 flex items-center justify-center rounded-xl border border-white/30 text-white/70 text-xs font-medium uppercase hover:text-white hover:border-white hover:bg-white/10 transition-all flex-shrink-0">LTR</button>
 <button id="menu-toggle" class="lg:hidden text-white/70 hover:text-white transition-colors p-2 flex-shrink-0">
     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
 </button>
 <div class="hidden lg:flex gap-2 xl:gap-3">
-<a class="text-sm font-bold px-4 py-2 text-white hover:text-gray-200 transition-colors whitespace-nowrap" href="login.html">Log in</a>
-<a class="text-sm font-bold px-6 py-2.5 bg-white text-brand-900 rounded-full hover:shadow-lg shadow-sm transition-shadow whitespace-nowrap" href="register.html">Sign up</a>
+<a class="text-sm font-medium px-4 py-2 text-white hover:text-gray-200 transition-colors whitespace-nowrap" href="login.html">Log in</a>
+<a class="text-sm font-medium px-6 py-2.5 bg-white text-brand-900 rounded-full hover:shadow-lg shadow-sm transition-shadow whitespace-nowrap" href="register.html">Sign up</a>
 </div>
 </div>
 </div>
@@ -151,35 +151,35 @@
 <!-- Overlay Gradient -->
 <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-brand-900 dark:to-gray-900"></div>
 <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-16">
-<span class="text-accent font-bold tracking-widest uppercase text-sm md:text-base mb-4 block animate-fade-in-up">The New Standard of Travel</span>
-<h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white leading-tight mb-8 drop-shadow-2xl">
-                    Discover the world's<br/>most <span class="italic font-light">breathtaking</span> escapes.
+<span class="text-accent font-medium tracking-widest uppercase text-sm md:text-base mb-4 block animate-fade-in-up">The New Standard of Travel</span>
+<h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-medium text-white leading-tight mb-8 drop-shadow-2xl">
+                    Discover the world's<br/>most <span class="italic font-normal">breathtaking</span> escapes.
                 </h1>
 </div>
 <!-- Floating Search Panel -->
 <div class="absolute bottom-16 left-1/2 -translate-x-1/2 w-full max-w-4xl px-4 z-30">
-<div class="bg-white/10 dark:bg-black/40 backdrop-blur-xl border border-white/20 p-3 md:p-4 rounded-full shadow-2xl flex flex-col md:flex-row items-center gap-2">
-<div class="flex-1 w-full bg-white dark:bg-gray-800 rounded-full flex items-center px-6 py-4 shadow-inner">
-<svg class="w-5 h-5 text-gray-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-<input class="w-full bg-transparent text-gray-900 dark:text-white placeholder-gray-500 outline-none font-medium" placeholder="Where are you dreaming of?" type="text"/>
-</div>
-<div class="hidden md:flex flex-1 w-full bg-white dark:bg-gray-800 rounded-full items-center px-6 py-4 shadow-inner">
-<svg class="w-5 h-5 text-gray-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-<input class="w-full bg-transparent text-gray-900 dark:text-white placeholder-gray-500 outline-none font-medium" placeholder="Dates" type="text"/>
-</div>
-<button class="w-full md:w-auto bg-brand-900 text-white font-bold px-8 py-4 rounded-full hover:bg-brand-800 transition-colors shadow-lg whitespace-nowrap">Explore Now</button>
+<div class="bg-white/10 dark:bg-black/40 backdrop-blur-xl border border-white/20 p-3 md:p-2 rounded-2xl md:rounded-full shadow-2xl flex flex-col md:flex-row items-stretch md:items-center gap-2 overflow-hidden">
+    <div class="flex-1 w-full bg-white dark:bg-gray-800 rounded-xl md:rounded-full flex items-center px-5 py-3.5 shadow-inner">
+        <svg class="w-5 h-5 text-gray-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        <input class="w-full bg-transparent text-gray-900 dark:text-white placeholder-gray-500 outline-none font-medium" placeholder="Where are you dreaming of?" type="text"/>
+    </div>
+    <div class="hidden md:flex flex-1 w-full bg-white dark:bg-gray-800 rounded-full items-center px-5 py-3.5 shadow-inner">
+        <svg class="w-5 h-5 text-gray-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        <input class="w-full bg-transparent text-gray-900 dark:text-white placeholder-gray-500 outline-none font-medium" placeholder="Dates" type="text"/>
+    </div>
+    <button class="w-full md:w-auto bg-brand-900 text-white font-medium px-8 py-3.5 rounded-xl md:rounded-full hover:bg-gray-800 transition-colors shadow-lg whitespace-nowrap">Explore Now</button>
 </div>
 </div>
 <!-- Overlapping Hero Cards (Decorative) -->
-<div class="hidden lg:block absolute -bottom-20 right-10 z-20 w-64 h-80 bg-white dark:bg-gray-800 rounded-3xl p-4 shadow-2xl rotate-6 transform translate-y-1/2 hover:rotate-0 hover:-translate-y-4 transition-all duration-500 border border-white/20">
+<div class="hidden xl:block absolute -bottom-20 right-10 z-20 w-64 h-80 bg-white dark:bg-gray-800 rounded-3xl p-4 shadow-2xl rotate-6 transform translate-y-1/2 hover:rotate-0 hover:-translate-y-4 transition-all duration-500 border border-white/20">
 <img class="w-full h-40 object-cover rounded-2xl mb-4" src="assets/7dff3bf1-b575-45bb-b1e3-03d930a475dc.jpeg"/>
-<h4 class="font-bold text-lg dark:text-white">Kyoto, Japan</h4>
+<h4 class="font-medium text-lg dark:text-white">Kyoto, Japan</h4>
 <p class="text-xs text-gray-500 mb-2">14-Day Immersive</p>
 <div class="flex items-center gap-1 text-accent"><svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg> 4.9</div>
 </div>
-<div class="hidden lg:block absolute -bottom-10 left-10 z-20 w-56 h-72 bg-white dark:bg-gray-800 rounded-3xl p-4 shadow-2xl -rotate-6 transform translate-y-1/2 hover:rotate-0 hover:-translate-y-4 transition-all duration-500 border border-white/20">
+<div class="hidden xl:block absolute -bottom-10 left-10 z-20 w-56 h-72 bg-white dark:bg-gray-800 rounded-3xl p-4 shadow-2xl -rotate-6 transform translate-y-1/2 hover:rotate-0 hover:-translate-y-4 transition-all duration-500 border border-white/20">
 <img class="w-full h-32 object-cover rounded-2xl mb-4" src="assets/e1e57f5d-36cd-4323-b945-b09071de5688.jpeg"/>
-<h4 class="font-bold text-lg dark:text-white">Paris, France</h4>
+<h4 class="font-medium text-lg dark:text-white">Paris, France</h4>
 <p class="text-xs text-gray-500 mb-2">7-Day Premium</p>
 <div class="flex items-center gap-1 text-accent"><svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg> 4.8</div>
 </div>
@@ -190,7 +190,7 @@
 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border-[1px] border-white/5 rounded-full pointer-events-none hidden md:block"></div>
 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] md:w-[600px] md:h-[600px] border-[1px] border-white/5 rounded-full pointer-events-none opacity-30 md:opacity-100"></div>
 <div class="text-center mb-12 md:mb-20 relative z-10 px-4">
-<h2 class="text-3xl md:text-5xl font-serif font-bold mb-3 md:mb-4 leading-tight">Trending Globally</h2>
+<h2 class="text-3xl md:text-5xl font-serif font-medium mb-3 md:mb-4 leading-tight">Trending Globally</h2>
 <p class="text-gray-400 text-sm md:text-base">Spin the globe and see where Trek travelers are heading this season.</p>
 </div>
 <!-- Orbit Container -->
@@ -205,7 +205,7 @@
 <path d="M2 50h96M10 25h80M10 75h80" stroke="currentColor" stroke-width="1"></path>
 </svg>
 <div class="absolute inset-0 bg-gradient-to-tr from-brand-900 to-transparent mix-blend-overlay"></div>
-<span class="absolute font-serif font-bold text-lg md:text-3xl text-white drop-shadow-xl z-10 pointer-events-none">Explore</span>
+<span class="absolute font-serif font-medium text-lg md:text-3xl text-white drop-shadow-xl z-10 pointer-events-none">Explore</span>
 </div>
 <!-- Orbit Items (Destinations) -->
 <a class="orbit-item group bg-white p-1 rounded-full shadow-2xl cursor-pointer" href="packages.html">
@@ -213,56 +213,56 @@
 <img class="w-full h-full object-cover" src="assets/bc30722b-06f4-4fd1-8c52-0fa39cc9bbf7.jpeg"/>
 <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors"></div>
 </div>
-<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity font-bold text-white text-sm bg-black/80 px-3 py-1 rounded-full">Kerala</div>
+<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity font-medium text-white text-sm bg-black/80 px-3 py-1 rounded-full">Kerala</div>
 </a>
 <a class="orbit-item group bg-white p-1 rounded-full shadow-2xl cursor-pointer" href="packages.html">
 <div class="w-full h-full rounded-full overflow-hidden relative">
 <img class="w-full h-full object-cover" src="assets/33e0ba10-f9e5-4e33-9aca-4ad16ff66588_(1).jpeg"/>
 <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors"></div>
 </div>
-<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity font-bold text-white text-sm bg-black/80 px-3 py-1 rounded-full">Maldives</div>
+<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity font-medium text-white text-sm bg-black/80 px-3 py-1 rounded-full">Maldives</div>
 </a>
 <a class="orbit-item group bg-white p-1 rounded-full shadow-2xl cursor-pointer" href="packages.html">
 <div class="w-full h-full rounded-full overflow-hidden relative">
 <img class="w-full h-full object-cover" src="assets/7414f588-8bd7-49e1-a8de-d16d67549a4e_(1).jpeg"/>
 <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors"></div>
 </div>
-<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity font-bold text-white text-sm bg-black/80 px-3 py-1 rounded-full">Paris</div>
+<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity font-medium text-white text-sm bg-black/80 px-3 py-1 rounded-full">Paris</div>
 </a>
 <a class="orbit-item group bg-white p-1 rounded-full shadow-2xl cursor-pointer" href="packages.html">
 <div class="w-full h-full rounded-full overflow-hidden relative">
 <img class="w-full h-full object-cover" src="assets/81ff77a6-f426-4bc0-aaed-74357fecf35f_(1).jpeg"/>
 <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors"></div>
 </div>
-<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity font-bold text-white text-sm bg-black/80 px-3 py-1 rounded-full">Kyoto</div>
+<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity font-medium text-white text-sm bg-black/80 px-3 py-1 rounded-full">Kyoto</div>
 </a>
 <a class="orbit-item group bg-white p-1 rounded-full shadow-2xl cursor-pointer" href="packages.html">
 <div class="w-full h-full rounded-full overflow-hidden relative">
 <img class="w-full h-full object-cover" src="assets/43e9674f-2585-4eee-abb5-9f8c6c6d5d6d.jpeg"/>
 <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors"></div>
 </div>
-<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity font-bold text-white text-sm bg-black/80 px-3 py-1 rounded-full">Swiss Alps</div>
+<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity font-medium text-white text-sm bg-black/80 px-3 py-1 rounded-full">Swiss Alps</div>
 </a>
 <a class="orbit-item group bg-white p-1 rounded-full shadow-2xl cursor-pointer" href="packages.html">
 <div class="w-full h-full rounded-full overflow-hidden relative">
 <img class="w-full h-full object-cover" src="assets/kerala_backwaters_1784462857750.png"/>
 <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors"></div>
 </div>
-<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity font-bold text-white text-sm bg-black/80 px-3 py-1 rounded-full">Kerala</div>
+<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity font-medium text-white text-sm bg-black/80 px-3 py-1 rounded-full">Kerala</div>
 </a>
 <a class="orbit-item group bg-white p-1 rounded-full shadow-2xl cursor-pointer" href="packages.html">
 <div class="w-full h-full rounded-full overflow-hidden relative">
 <img class="w-full h-full object-cover" src="assets/930d2d40-0401-4f74-8a84-6e2058bf2510.jpeg"/>
 <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors"></div>
 </div>
-<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity font-bold text-white text-sm bg-black/80 px-3 py-1 rounded-full">Tuscany</div>
+<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity font-medium text-white text-sm bg-black/80 px-3 py-1 rounded-full">Tuscany</div>
 </a>
 <a class="orbit-item group bg-white p-1 rounded-full shadow-2xl cursor-pointer" href="packages.html">
 <div class="w-full h-full rounded-full overflow-hidden relative">
 <img class="w-full h-full object-cover" src="assets/e8c4e685-173a-4646-b865-9918adcb6ca0.jpeg"/>
 <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors"></div>
 </div>
-<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity font-bold text-white text-sm bg-black/80 px-3 py-1 rounded-full">Booking</div>
+<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity font-medium text-white text-sm bg-black/80 px-3 py-1 rounded-full">Booking</div>
 </a>
 </div>
 </div>
@@ -271,8 +271,8 @@
 <section class="py-24 md:py-32 bg-gray-50 dark:bg-gray-900 relative">
 <div class="max-w-7xl mx-auto px-6">
 <div class="text-center mb-16">
-<span class="text-accent font-bold tracking-widest uppercase text-sm block mb-2">Our Masterpieces</span>
-<h2 class="text-4xl md:text-5xl font-serif font-bold text-brand-900 dark:text-white">Best Selling Packages</h2>
+<span class="text-accent font-medium tracking-widest uppercase text-sm block mb-2">Our Masterpieces</span>
+<h2 class="text-4xl md:text-5xl font-serif font-medium text-brand-900 dark:text-white">Best Selling Packages</h2>
 </div>
 <!-- CSS Columns for Masonry/Staggered effect -->
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -282,13 +282,13 @@
 <div class="p-8 flex flex-col flex-1">
 <div class="flex justify-between items-start mb-4">
 <div>
-<h3 class="text-xl font-bold text-brand-900 dark:text-white mb-1">Parisian Romance</h3>
+<h3 class="text-xl font-medium text-brand-900 dark:text-white mb-1">Parisian Romance</h3>
 <p class="text-sm text-gray-500">7 Days • 5-Star</p>
 </div>
-<span class="bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-bold px-3 py-1 rounded-lg text-sm">$2,400</span>
+<span class="bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-medium px-3 py-1 rounded-lg text-sm">$2,400</span>
 </div>
 <p class="text-gray-600 dark:text-gray-400 text-sm mb-6">Experience the magic of the French capital with exclusive private tours of the Louvre, romantic Seine dinner cruises, and boutique luxury stays.</p>
-<a class="mt-auto block text-center w-full bg-gray-100 dark:bg-gray-700 text-brand-900 dark:text-white font-bold py-3 rounded-xl hover:bg-brand-900 hover:text-white dark:hover:bg-gray-600 transition-colors" href="bookings.html">View Itinerary</a>
+<a class="mt-auto block text-center w-full bg-gray-100 dark:bg-gray-700 text-brand-900 dark:text-white font-medium py-3 rounded-xl hover:bg-brand-900 hover:text-white dark:hover:bg-gray-600 transition-colors" href="bookings.html">View Itinerary</a>
 </div>
 </div>
 <!-- Card 2 (Taller) -->
@@ -297,13 +297,13 @@
 <div class="p-8 flex flex-col flex-1">
 <div class="flex justify-between items-start mb-4">
 <div>
-<h3 class="text-xl font-bold text-brand-900 dark:text-white mb-1">Kyoto Traditions</h3>
+<h3 class="text-xl font-medium text-brand-900 dark:text-white mb-1">Kyoto Traditions</h3>
 <p class="text-sm text-gray-500">14 Days • Cultural</p>
 </div>
-<span class="bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-bold px-3 py-1 rounded-lg text-sm">$4,999</span>
+<span class="bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-medium px-3 py-1 rounded-lg text-sm">$4,999</span>
 </div>
 <p class="text-gray-600 dark:text-gray-400 text-sm mb-6">Immerse yourself in Japan's ancient capital. Stay in authentic ryokans, partake in private tea ceremonies, and ride the bullet train in premium class.</p>
-<a class="mt-auto block text-center w-full bg-brand-900 dark:bg-white text-white dark:text-brand-900 font-bold py-3 rounded-xl shadow-md hover:shadow-lg transition-all" href="bookings.html">Book Now</a>
+<a class="mt-auto block text-center w-full bg-brand-900 dark:bg-white text-white dark:text-brand-900 font-medium py-3 rounded-xl shadow-md hover:shadow-lg transition-all" href="bookings.html">Book Now</a>
 </div>
 </div>
 <!-- Card 3 -->
@@ -312,13 +312,13 @@
 <div class="p-8 flex flex-col flex-1">
 <div class="flex justify-between items-start mb-4">
 <div>
-<h3 class="text-xl font-bold text-brand-900 dark:text-white mb-1">Maldives Retreat</h3>
+<h3 class="text-xl font-medium text-brand-900 dark:text-white mb-1">Maldives Retreat</h3>
 <p class="text-sm text-gray-500">10 Days • Overwater</p>
 </div>
-<span class="bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-bold px-3 py-1 rounded-lg text-sm">$6,500</span>
+<span class="bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-medium px-3 py-1 rounded-lg text-sm">$6,500</span>
 </div>
 <p class="text-gray-600 dark:text-gray-400 text-sm mb-6">Disconnect from the world in a premium overwater villa. Includes private seaplane transfers and daily spa treatments.</p>
-<a class="mt-auto block text-center w-full bg-gray-100 dark:bg-gray-700 text-brand-900 dark:text-white font-bold py-3 rounded-xl hover:bg-brand-900 hover:text-white dark:hover:bg-gray-600 transition-colors" href="bookings.html">View Itinerary</a>
+<a class="mt-auto block text-center w-full bg-gray-100 dark:bg-gray-700 text-brand-900 dark:text-white font-medium py-3 rounded-xl hover:bg-brand-900 hover:text-white dark:hover:bg-gray-600 transition-colors" href="bookings.html">View Itinerary</a>
 </div>
 </div>
 <!-- Card 4 (Taller) -->
@@ -327,24 +327,29 @@
 <div class="p-8 flex flex-col flex-1">
 <div class="flex justify-between items-start mb-4">
 <div>
-<h3 class="text-xl font-bold text-brand-900 dark:text-white mb-1">Swiss Alps Adventure</h3>
+<h3 class="text-xl font-medium text-brand-900 dark:text-white mb-1">Swiss Alps Adventure</h3>
 <p class="text-sm text-gray-500">5 Days • Ultra-Luxury</p>
 </div>
-<span class="bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-bold px-3 py-1 rounded-lg text-sm">$3,200</span>
+<span class="bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-medium px-3 py-1 rounded-lg text-sm">$3,200</span>
 </div>
 <p class="text-gray-600 dark:text-gray-400 text-sm mb-6">Experience the heights of luxury with stays at iconic 7-star resorts, private desert safaris, and helicopter city tours.</p>
-<a class="mt-auto block text-center w-full bg-gray-100 dark:bg-gray-700 text-brand-900 dark:text-white font-bold py-3 rounded-xl hover:bg-brand-900 hover:text-white dark:hover:bg-gray-600 transition-colors" href="bookings.html">View Itinerary</a>
+<a class="mt-auto block text-center w-full bg-gray-100 dark:bg-gray-700 text-brand-900 dark:text-white font-medium py-3 rounded-xl hover:bg-brand-900 hover:text-white dark:hover:bg-gray-600 transition-colors" href="bookings.html">View Itinerary</a>
 </div>
 </div>
 <!-- Card 5 -->
-<div class="bg-brand-900 dark:bg-gray-800 rounded-[2rem] shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden transform hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 flex flex-col justify-center items-center text-center p-12 text-white h-full min-h-[18rem]">
-<div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mb-6">
-<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</div>
-<h3 class="text-2xl font-serif font-bold mb-2">View All 42 Packages</h3>
-<p class="text-sm text-gray-400 mb-6">Find your perfect itinerary.</p>
-<a class="border border-white/30 font-bold px-8 py-3 rounded-full hover:bg-white hover:text-brand-900 transition-colors" href="packages.html">Explore Gallery</a>
-</div>
+<a href="packages.html" class="group bg-brand-900 dark:bg-gray-800 rounded-[2rem] shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden transform hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 flex flex-col justify-between items-center text-center p-12 text-white h-full min-h-[22rem] cursor-pointer relative">
+    <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+    
+    <div class="flex-1 flex flex-col justify-center items-center relative z-10 mt-4">
+        <div class="text-6xl md:text-7xl font-serif font-medium text-accent mb-4">42</div>
+        <h3 class="text-2xl font-serif font-medium mb-2 tracking-wide text-white">Exclusive Packages</h3>
+        <p class="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">Find your perfect itinerary.</p>
+    </div>
+
+    <div class="w-14 h-14 bg-white/10 group-hover:bg-accent transition-colors duration-500 rounded-full flex items-center justify-center relative z-10 mt-8">
+        <svg class="w-6 h-6 text-white group-hover:text-brand-900 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+    </div>
+</a>
 </div>
 </div>
 </section>
@@ -358,8 +363,8 @@
 <img class="relative z-10 w-full h-[500px] object-cover rounded-[2rem] shadow-xl" src="assets/5a4b559f-0835-41e3-a03b-6c0e1ad45dad.jpeg"/>
 </div>
 <div class="flex-1">
-<span class="text-accent font-bold tracking-widest uppercase text-sm block mb-2">Expertise</span>
-<h2 class="text-4xl font-serif font-bold text-brand-900 dark:text-white mb-6">Curated by locals, perfected for you.</h2>
+<span class="text-accent font-medium tracking-widest uppercase text-sm block mb-2">Expertise</span>
+<h2 class="text-4xl font-serif font-medium text-brand-900 dark:text-white mb-6">Curated by locals, perfected for you.</h2>
 <p class="text-lg text-gray-500 mb-8">We don't do cookie-cutter tours. Every single itinerary is crafted by our global network of destination experts who know the hidden spots that no travel blog will tell you about.</p>
 <ul class="space-y-4">
 <li class="flex items-center gap-4 text-brand-900 dark:text-gray-300 font-medium">
@@ -377,23 +382,23 @@
 <div class="flex flex-col md:flex-row-reverse items-center gap-16">
 <div class="flex-1 relative">
 <div class="absolute -inset-4 bg-blue-600/10 rounded-[3rem] transform rotate-3"></div>
-<img class="relative z-10 w-full h-[500px] object-cover rounded-[2rem] shadow-xl" src="assets/79afcf34-b914-473f-9e23-bd1ed53017aa.jpeg"/>
+<img class="relative z-10 w-full h-[500px] object-cover rounded-[2rem] shadow-xl" src="assets/dashboard_concept.jpg"/>
 <!-- Floating widget -->
 <div class="absolute -left-10 bottom-10 z-20 bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-700 animate-float-2 hidden lg:block">
 <div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full bg-brand-900 flex items-center justify-center text-white font-bold">24/7</div>
+<div class="w-12 h-12 rounded-full bg-brand-900 flex items-center justify-center text-white font-medium">24/7</div>
 <div>
-<div class="font-bold text-brand-900 dark:text-white">Global Concierge</div>
+<div class="font-medium text-brand-900 dark:text-white">Global Concierge</div>
 <div class="text-xs text-gray-500">Always there for you</div>
 </div>
 </div>
 </div>
 </div>
 <div class="flex-1">
-<span class="text-accent font-bold tracking-widest uppercase text-sm block mb-2">Technology</span>
-<h2 class="text-4xl font-serif font-bold text-brand-900 dark:text-white mb-6">Frictionless travel, powered by design.</h2>
+<span class="text-accent font-medium tracking-widest uppercase text-sm block mb-2">Technology</span>
+<h2 class="text-4xl font-serif font-medium text-brand-900 dark:text-white mb-6">Frictionless travel, powered by design.</h2>
 <p class="text-lg text-gray-500 mb-8">Say goodbye to scattered emails and confusing PDFs. With our dedicated customer dashboard, your entire itinerary, boarding passes, and emergency contacts are available offline in one beautiful place.</p>
-<a class="inline-flex items-center text-blue-600 font-bold hover:text-blue-700 transition-colors" href="dashboard.html">
+<a class="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors" href="dashboard.html">
                             Preview the Dashboard <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </a>
 </div>
@@ -403,52 +408,61 @@
 <!-- 5. Traveler Reviews: Speech Bubble Wall -->
 <section class="py-24 bg-gray-50 dark:bg-gray-900 overflow-hidden relative">
 <div class="max-w-7xl mx-auto px-6 text-center mb-16 relative z-10">
-<h2 class="text-4xl font-serif font-bold text-brand-900 dark:text-white">Stories from the road.</h2>
+<h2 class="text-4xl font-serif font-medium text-brand-900 dark:text-white">Stories from the road.</h2>
 </div>
 <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
 <!-- Bubble 1 (Left tail) -->
-<div class="animate-float-1 flex flex-col h-full bg-white dark:bg-gray-800 p-8 shadow-lg border border-gray-100 dark:border-gray-700 rounded-3xl rounded-bl-none relative">
+<div class="flex flex-col h-full bg-white dark:bg-gray-800 p-8 shadow-lg border border-gray-100 dark:border-gray-700 rounded-3xl rounded-bl-none relative">
 <div class="flex gap-1 text-accent mb-4">
-<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
 </div>
 <p class="text-gray-600 dark:text-gray-300 italic mb-6 flex-1 text-justify">"Trek completely changed how we travel. The dashboard made everything so easy, and our guide in Rome was incredible. Can't wait for the next trip!"</p>
 <div class="flex items-center gap-3 mt-auto">
-<div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500">S</div>
-<div class="font-bold text-sm text-brand-900 dark:text-white">Sarah Jenkins<span class="block font-normal text-xs text-gray-400">Traveled to Italy</span></div>
+    <div class="w-10 h-10 bg-brand-900 dark:bg-white rounded-full flex items-center justify-center font-medium text-white dark:text-brand-900 shrink-0">S</div>
+    <div>
+        <div class="font-medium text-sm text-brand-900 dark:text-white">Sarah Jenkins</div>
+        <div class="font-normal text-xs text-gray-500 dark:text-gray-400">Traveled to Italy</div>
+    </div>
 </div>
 </div>
-<!-- Bubble 2 (Right tail) - shifted down slightly -->
-<div class="animate-float-2 flex flex-col h-full bg-brand-900 text-white p-8 shadow-xl rounded-3xl rounded-br-none relative mt-4 lg:mt-8">
+<!-- Bubble 2 (Center) - shifted down slightly -->
+<div class="flex flex-col h-full bg-brand-900 text-white p-8 shadow-xl rounded-3xl relative mt-4 lg:mt-8">
 <div class="flex gap-1 text-accent mb-4">
-<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
 </div>
 <p class="text-blue-100 italic mb-6 flex-1 text-justify">"Five stars across the board. The level of detail and curation is unmatched. We felt like VIPs at every hotel."</p>
 <div class="flex items-center gap-3 mt-auto">
-<div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center font-bold text-white">M</div>
-<div class="font-bold text-sm text-white">Michael Chang<span class="block font-normal text-xs text-blue-200">Traveled to Japan</span></div>
+    <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center font-medium text-white shrink-0">M</div>
+    <div>
+        <div class="font-medium text-sm text-white">Michael Chang</div>
+        <div class="font-normal text-xs text-blue-200">Traveled to Japan</div>
+    </div>
 </div>
 </div>
-<!-- Bubble 3 (Top left tail) -->
-<div class="animate-float-3 flex flex-col h-full bg-white dark:bg-gray-800 p-8 shadow-lg border border-gray-100 dark:border-gray-700 rounded-3xl rounded-tl-none relative hidden lg:block">
+<!-- Bubble 3 (Right tail) -->
+<div class="flex flex-col h-full bg-white dark:bg-gray-800 p-8 shadow-lg border border-gray-100 dark:border-gray-700 rounded-3xl rounded-br-none relative hidden lg:flex">
 <div class="flex gap-1 text-accent mb-4">
-<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
 </div>
 <p class="text-gray-600 dark:text-gray-300 italic mb-6 flex-1 text-justify">"A seamless booking process and an absolutely flawless vacation. I will never plan a trip myself again."</p>
 <div class="flex items-center gap-3 mt-auto">
-<div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500">A</div>
-<div class="font-bold text-sm text-brand-900 dark:text-white">Amanda West<span class="block font-normal text-xs text-gray-400">Traveled to Dubai</span></div>
+    <div class="w-10 h-10 bg-brand-900 dark:bg-white rounded-full flex items-center justify-center font-medium text-white dark:text-brand-900 shrink-0">A</div>
+    <div>
+        <div class="font-medium text-sm text-brand-900 dark:text-white">Amanda West</div>
+        <div class="font-normal text-xs text-gray-500 dark:text-gray-400">Traveled to Dubai</div>
+    </div>
 </div>
 </div>
 </div>
@@ -465,11 +479,11 @@
 </div>
 <div class="absolute inset-0 bg-brand-900/80 backdrop-blur-sm z-0"></div>
 <div class="relative z-20 max-w-4xl mx-auto px-6 text-center">
-<h2 class="text-4xl md:text-6xl font-serif font-bold text-white mb-8 leading-tight">Your next adventure<br/>is calling.</h2>
+<h2 class="text-4xl md:text-6xl font-serif font-medium text-white mb-8 leading-tight">Your next adventure<br/>is calling.</h2>
 <p class="text-xl text-blue-100 mb-12 max-w-2xl mx-auto">Join thousands of travelers who have elevated their journeys with Trek. Create your account to unlock exclusive itineraries.</p>
 <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-<a class="w-full sm:w-auto bg-white text-brand-900 font-bold px-12 py-5 rounded-full hover:shadow-2xl hover:bg-gray-50 transition-all text-lg border border-transparent" href="register.html">Get Started Today</a>
-<a class="w-full sm:w-auto bg-transparent border border-white/30 text-white font-bold px-12 py-5 rounded-full hover:bg-white/10 transition-all text-lg" href="contact.html">Talk to an Expert</a>
+<a class="w-full sm:w-auto bg-white text-brand-900 font-medium px-12 py-5 rounded-full hover:shadow-2xl hover:bg-gray-50 transition-all text-lg border border-transparent" href="register.html">Get Started Today</a>
+<a class="w-full sm:w-auto bg-transparent border border-white/30 text-white font-medium px-12 py-5 rounded-full hover:bg-white/10 transition-all text-lg" href="contact.html">Talk to an Expert</a>
 </div>
 </div>
 </section>
@@ -480,8 +494,8 @@
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
 <!-- Logo & About -->
 <div class="lg:col-span-1">
-<a class="text-3xl font-serif font-bold text-white flex items-center gap-2 mb-4 hover:text-accent transition-colors" href="index.html">
-<svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+<a class="text-3xl font-serif font-medium text-white flex items-center gap-2 mb-4 hover:text-accent transition-colors" href="index.html">
+<img src="images/logo.png" alt="Trek Logo" class="w-8 h-8 object-contain shrink-0">
 <span>Trek<span class="text-accent">.</span></span>
 </a>
 <p class="text-gray-400 text-sm leading-relaxed mb-6">
@@ -502,7 +516,7 @@
 </div>
 <!-- Quick Links -->
 <div>
-<h4 class="font-bold mb-4 text-white uppercase tracking-wider text-sm">Quick Links</h4>
+<h4 class="font-medium mb-4 text-white uppercase tracking-wider text-sm">Quick Links</h4>
 <ul class="space-y-3 text-sm text-gray-400">
 <li><a class="hover:text-accent transition-colors flex items-center gap-2" href="index.html"><span class="w-1.5 h-1.5 rounded-full bg-accent opacity-0 hover:opacity-100 transition-opacity"></span>Home</a></li>
 <li><a class="hover:text-accent transition-colors flex items-center gap-2" href="destinations.html"><span class="w-1.5 h-1.5 rounded-full bg-accent opacity-0 hover:opacity-100 transition-opacity"></span>Services</a></li>
@@ -512,7 +526,7 @@
 </div>
 <!-- Account -->
 <div>
-<h4 class="font-bold mb-4 text-white uppercase tracking-wider text-sm">Account</h4>
+<h4 class="font-medium mb-4 text-white uppercase tracking-wider text-sm">Account</h4>
 <ul class="space-y-3 text-sm text-gray-400">
 <li><a class="hover:text-accent transition-colors flex items-center gap-2" href="dashboard.html"><span class="w-1.5 h-1.5 rounded-full bg-accent opacity-0 hover:opacity-100 transition-opacity"></span>Dashboard</a></li>
 <li><a class="hover:text-accent transition-colors flex items-center gap-2" href="bookings.html"><span class="w-1.5 h-1.5 rounded-full bg-accent opacity-0 hover:opacity-100 transition-opacity"></span>My Bookings</a></li>
@@ -522,7 +536,7 @@
 </div>
 <!-- Contact -->
 <div>
-<h4 class="font-bold mb-4 text-white uppercase tracking-wider text-sm">Contact Us</h4>
+<h4 class="font-medium mb-4 text-white uppercase tracking-wider text-sm">Contact Us</h4>
 <ul class="space-y-3 text-sm text-gray-400">
 <li class="flex items-start gap-3 group">
 <svg class="w-5 h-5 text-accent mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
@@ -554,8 +568,8 @@
 <!-- Mobile Navigation Overlay -->
 <div class="fixed inset-0 bg-white dark:bg-gray-900 z-50 transform translate-x-full transition-transform duration-300 flex flex-col" id="mobile-nav-overlay">
     <div class="h-20 px-6 flex items-center justify-between border-b border-gray-100 dark:border-gray-800">
-        <a class="text-3xl font-serif font-bold text-brand-900 dark:text-white flex items-center gap-2" href="index.html">
-            <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <a class="text-3xl font-serif font-medium text-brand-900 dark:text-white flex items-center gap-2" href="index.html">
+            <img src="images/logo.png" alt="Trek Logo" class="w-8 h-8 object-contain shrink-0">
             <span>Trek<span class="text-accent">.</span></span>
         </a>
         <button id="mobile-nav-close" class="text-gray-500 hover:text-brand-900 dark:hover:text-white p-2">
@@ -565,22 +579,22 @@
     <nav class="flex-1 overflow-y-auto py-8 px-6 flex flex-col gap-6" id="mobile-nav">
         <!-- Home Dropdown -->
         <div class="flex flex-col gap-2">
-            <div class="text-2xl font-serif font-bold text-gray-900 dark:text-white">Home</div>
+            <div class="text-2xl font-serif font-medium text-gray-900 dark:text-white">Home</div>
             <div class="flex flex-col gap-4 pl-4 mt-1 border-l-2 border-gray-200 dark:border-gray-700">
                 <a class="text-lg font-serif font-medium text-gray-600 dark:text-gray-400 hover:text-brand-900 dark:hover:text-white" href="index.html">Home 1 (Cinematic)</a>
                 <a class="text-lg font-serif font-medium text-gray-600 dark:text-gray-400 hover:text-brand-900 dark:hover:text-white" href="home2.html">Home 2 (Editorial)</a>
             </div>
         </div>
         
-        <a class="text-2xl font-serif font-bold text-gray-900 dark:text-white hover:text-brand-900" href="destinations.html">Destinations</a>
-        <a class="text-2xl font-serif font-bold text-gray-900 dark:text-white hover:text-brand-900" href="packages.html">Packages</a>
-        <a class="text-2xl font-serif font-bold text-gray-900 dark:text-white hover:text-brand-900" href="about.html">About</a>
-        <a class="text-2xl font-serif font-bold text-gray-900 dark:text-white hover:text-brand-900" href="contact.html">Contact</a>
-        <a class="text-2xl font-serif font-bold text-gray-900 dark:text-white hover:text-brand-900" href="bookings.html">Bookings</a>
+        <a class="text-2xl font-serif font-medium text-gray-900 dark:text-white hover:text-brand-900" href="destinations.html">Destinations</a>
+        <a class="text-2xl font-serif font-medium text-gray-900 dark:text-white hover:text-brand-900" href="packages.html">Packages</a>
+        <a class="text-2xl font-serif font-medium text-gray-900 dark:text-white hover:text-brand-900" href="about.html">About</a>
+        <a class="text-2xl font-serif font-medium text-gray-900 dark:text-white hover:text-brand-900" href="contact.html">Contact</a>
+        <a class="text-2xl font-serif font-medium text-gray-900 dark:text-white hover:text-brand-900" href="bookings.html">Bookings</a>
         
         <!-- Dashboards Dropdown -->
         <div class="flex flex-col gap-2">
-            <div class="text-2xl font-serif font-bold text-gray-900 dark:text-white">Dashboards</div>
+            <div class="text-2xl font-serif font-medium text-gray-900 dark:text-white">Dashboards</div>
             <div class="flex flex-col gap-4 pl-4 mt-1 border-l-2 border-gray-200 dark:border-gray-700">
                 <a class="text-lg font-serif font-medium text-gray-600 dark:text-gray-400 hover:text-brand-900 dark:hover:text-white" href="dashboard.html">User Dashboard</a>
                 <a class="text-lg font-serif font-medium text-gray-600 dark:text-gray-400 hover:text-brand-900 dark:hover:text-white" href="admin.html">Admin Portal</a>
@@ -589,12 +603,31 @@
         
         <hr class="border-gray-100 dark:border-gray-800 my-4">
         <div class="flex flex-col gap-4">
-            <a class="text-center font-bold px-6 py-4 border-2 border-brand-900 dark:border-white text-brand-900 dark:text-white rounded-full" href="login.html">Log in</a>
-            <a class="text-center font-bold px-6 py-4 bg-brand-900 dark:bg-white text-white dark:text-brand-900 rounded-full" href="register.html">Sign up</a>
+            <a class="text-center font-medium px-6 py-4 border-2 border-brand-900 dark:border-white text-brand-900 dark:text-white rounded-full" href="login.html">Log in</a>
+            <a class="text-center font-medium px-6 py-4 bg-brand-900 dark:bg-white text-white dark:text-brand-900 rounded-full" href="register.html">Sign up</a>
         </div>
     </nav>
 </div>
 <script src="js/main.js"></script>
+<script>
+// --- Navbar scroll solidify ---
+(function () {
+    var header = document.getElementById('main-header');
+    if (!header) return;
+    var heroHeight = window.innerHeight * 0.6;
+    function onScroll() {
+        if (window.scrollY > heroHeight) {
+            header.classList.remove('bg-black/40', 'backdrop-blur-md', 'border-white/10');
+            header.classList.add('bg-brand-900', 'shadow-lg', 'border-gray-800');
+        } else {
+            header.classList.add('bg-black/40', 'backdrop-blur-md', 'border-white/10');
+            header.classList.remove('bg-brand-900', 'shadow-lg', 'border-gray-800');
+        }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // run on load
+})();
+</script>
 
 </body>
 </html>

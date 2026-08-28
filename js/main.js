@@ -116,3 +116,30 @@ if (sidebarToggle && sidebar) {
         }
     });
 }
+
+
+// --- Notification Toggle ---
+const notifBtn = document.getElementById('notification-btn');
+const notifMenu = document.getElementById('notification-menu');
+
+if (notifBtn && notifMenu) {
+    notifBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = !notifMenu.classList.contains('opacity-0');
+        if (isOpen) {
+            notifMenu.classList.add('opacity-0', 'pointer-events-none');
+            notifMenu.classList.remove('opacity-100', 'pointer-events-auto');
+        } else {
+            notifMenu.classList.remove('opacity-0', 'pointer-events-none');
+            notifMenu.classList.add('opacity-100', 'pointer-events-auto');
+        }
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!notifMenu.contains(e.target) && !notifBtn.contains(e.target)) {
+            notifMenu.classList.add('opacity-0', 'pointer-events-none');
+            notifMenu.classList.remove('opacity-100', 'pointer-events-auto');
+        }
+    });
+}
+
